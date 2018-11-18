@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable-pro@latest/dist/handsontable.full.min.css">
+    <link rel="stylesheet" type="text/css" href="https://handsontable.com/static/css/main.css">
+<link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/handsontable-pro@latest/dist/handsontable.full.min.js"></script>
+<style>
+
+    .handsontable{
+        border-radius: 10px
+    }
+    .handsontable th {
+        background-color: #697dff;
+        color: #fff;
+        font-size: 14px;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 700
+    }
+
+    .ht_master tr:nth-of-type(odd) > td {
+        //background: rgba(234,237,255, 0.2);
+        color: #5067ff;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    /* Every even row */
+    .ht_master tr:nth-of-type(even) > td {
+        //background: rgba(234,237,255, 0.6);
+        color: #5067ff;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+    }
+</style>
+
+<div style="margin-top:100px;">
+    <div style="display:flex;justify-content: center; align-items:center;">
+        <div style="display:flex; border-radius:10px; width:40%; justify-content: center; align-items:center; background: #697dff; color: #fff;height: 50px;font-family: 'Rubik', sans-serif;">
+            <form name="form" action="/ExcelToHandson" enctype="multipart/form-data" method="post">
+                <input style="height: 20px" id="files" name="files" type="file" multiple onchange="fileupload('files');" />
+            </form>
+        </div>
+    </div>
+    <div class="row top-buffer" style="margin-top:10px">
+        <p>Your data will show here</p>
+        <div class="col-md-12">
+            <div id="hot"></div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/myjsfile.js"></script>

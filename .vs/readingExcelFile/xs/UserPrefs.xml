@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{02C2438B-BEBE-4459-8630-D93094905630}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="readingExcelFile/wwwroot/css/site.css">
+    <Files>
+      <File FileName="readingExcelFile/Views/Home/Index.cshtml" Line="18" Column="29" />
+      <File FileName="readingExcelFile/wwwroot/js/myjsfile.js" Line="55" Column="1" />
+      <File FileName="../../.nuget/packages/epplus/4.5.2.1/readme.txt" Line="1" Column="1" />
+      <File FileName="readingExcelFile/Controllers/HomeController.cs" Line="14" Column="1" />
+      <File FileName="readingExcelFile/wwwroot/css/site.css" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../readingExcelFile/Controllers/uploadMultipleController.cs" line="12" offsetX="280" offsetY="165" expression="DocumentFormat" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.readingExcelFile PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
