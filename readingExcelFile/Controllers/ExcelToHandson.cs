@@ -23,7 +23,7 @@ namespace ExcelToHandson.Controllers
         public IActionResult Index(IList<IFormFile> files)
         {
             Contract.Ensures(Contract.Result<IActionResult>() != null);
-            string text="";
+            string text = "";
             foreach (IFormFile item in files)
             {
                 using (MemoryStream targetStream = new MemoryStream())
@@ -40,7 +40,7 @@ namespace ExcelToHandson.Controllers
                         ExcelPackage package = new ExcelPackage(targetStream);
                         ExcelWorksheet sheet = package.Workbook.Worksheets[0];
 
-                        string[] columnsArray = new string[sheet.Dimension.End.Column+1];
+                        string[] columnsArray = new string[sheet.Dimension.End.Column + 1];
                         text += "{";
                         //loop all rows in the sheet
                         for (int i = sheet.Dimension.Start.Row; i <= sheet.Dimension.End.Row;)
@@ -50,7 +50,7 @@ namespace ExcelToHandson.Controllers
                             for (int j = sheet.Dimension.Start.Column; j <= sheet.Dimension.End.Column; j++)
                             {
                                 //do something with the current cell value
-                                text +=   "\""+sheet.Cells[i, j].Value.ToString() + "\",";
+                                text += "\"" + sheet.Cells[i, j].Value.ToString() + "\",";
                                 columnsArray[j] = sheet.Cells[i, j].Value.ToString();
                             }
                             text = text.Substring(0, text.Length - 1);
@@ -59,7 +59,7 @@ namespace ExcelToHandson.Controllers
                         }
                         text += "\"data\":[";
 
-                        for (int i = sheet.Dimension.Start.Row + 1; i <= sheet.Dimension.End.Row;i++)
+                        for (int i = sheet.Dimension.Start.Row + 1; i <= sheet.Dimension.End.Row; i++)
                         {
                             text += "{";
                             //loop all columns in a row
@@ -76,24 +76,22 @@ namespace ExcelToHandson.Controllers
                         text = text.Substring(0, text.Length - 1);
                         text += "]}";
 
-                        //long size = files.Sum(f => f.Length);
-
-                        //// full path to file in temp location
-                        //var filePath = Path.GetTempFileName();
-                        //text = item.FileName;
-                        //var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", item.FileName);
-                        //using (var stream = new FileStream(path, FileMode.Create)){
-                        //        item.CopyTo(stream);
-
-                        //}
                     }
-                    catch (Exception ex){
+                    catch (Exception ex)
+                    {
                         text = ex.Message;
                     }
                 }
-              
+
             }
             return this.Content(text);
+        }
+
+        [HttpPost]
+        [Route("ExcelToHandson/SaveData")]
+        public IActionResult SaveData([FromBody] string data){
+            string text = data;
+            return this.Content("I am saving data");
         }
     }
 }

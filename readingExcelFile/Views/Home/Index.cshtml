@@ -45,11 +45,36 @@
             </form>
         </div>
     </div>
+    
     <div class="row top-buffer" style="margin-top:10px">
+
         <p>Your data will show here</p>
-        <div class="col-md-12">
-            <div id="hot"></div>
+        <ul class="nav nav-pills">
+            <li class="active"><a data-toggle="pill" href="#prodBasic">Tab1</a></li>
+            <li ><a id="priceSheet" data-toggle="pill" href="#priceSheet">Tab2</a></li>
+            <li><a data-toggle="pill" href="#whatEver">WhatEver</a></li>
+        </ul>
+
+        <div class="tab-content" style="margin-top: 10px">
+            <div id="prodBasic" class="tab-pane fade in active">
+                <div class="col-md-12">
+                    <div id="hot"></div>
+                </div>
+            </div>
+            <div id="priceSheet" class="tab-pane fade">
+                <div class="col-md-12">
+                    <div id="hot2"></div>
+                </div>
+            </div>
+            <div id="whatEver" class="tab-pane fade">
+                <div class="col-md-12">
+                    <div id="hot3"></div>
+                </div>
+            </div>
         </div>
+    </div>
+    <div>
+        <button id="saveDataBtn">Save Data</button>
     </div>
 </div>
 
